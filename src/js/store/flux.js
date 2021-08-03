@@ -3,10 +3,26 @@ const getState = ({ getStore, setStore }) => {
 	const url = "https://assets.breatheco.de/apis/fake/contact/";
 	return {
 		store: {
-			contacts: []
+			contacts: [],
+			contactsFB: []
 			//Your data structures, A.K.A Entities
 		},
 		actions: {
+			getContactFromFB: async () => {
+				try {
+					const getContacts = firebase.firestore().collection("contacts");
+					const response = await getContacts.get();
+
+					response.forEach(contact => {
+						setStore({
+							contactsFB: [...getStore().contactsFB, { ...contact.data(), id: contact.id }]
+						});
+					});
+					console.log("data from Firebase", getStore().contactsFB);
+				} catch (e) {
+					console.log(e);
+				}
+			},
 			getContacts: () => {
 				fetch("https://assets.breatheco.de/apis/fake/contact/agenda/kevincastro015")
 					.then(response => response.json())
