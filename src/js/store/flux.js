@@ -1,3 +1,4 @@
+import firebase from "firebase/app";
 // const url = "https://assets.breatheco.de/apis/fake/contact/";
 const getState = ({ getStore, setStore }) => {
 	const url = "https://assets.breatheco.de/apis/fake/contact/";
