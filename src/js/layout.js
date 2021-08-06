@@ -2,9 +2,8 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // import ScrollToTop from "./component/scrollToTop";
-
+import { Home } from "./views/home";
 import injectContext from "./store/appContext";
-import Login from "../js/views/home";
 import { Contacts } from "./views/Contacts.js";
 import { AddContact } from "./views/AddContact.js";
 import { EditContact } from "./views/EditContact.js";
@@ -15,6 +14,9 @@ export const Layout = () => {
 			<BrowserRouter>
 				<div>
 					<Switch>
+						<Route>
+							<Home />
+						</Route>
 						<Route exact path="/" component={Contacts} />
 						<Route exact path="/add" component={AddContact} />
 						<Route exact path="/edit/:index" component={EditContact} />
