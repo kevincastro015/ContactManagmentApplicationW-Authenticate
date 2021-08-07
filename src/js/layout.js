@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 // import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
+import { Dashboard } from "./views/dashboard";
 import injectContext from "./store/appContext";
 import { Contacts } from "./views/Contacts.js";
 import { AddContact } from "./views/AddContact.js";

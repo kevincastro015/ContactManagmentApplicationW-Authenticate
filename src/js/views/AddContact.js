@@ -54,7 +54,7 @@ export const AddContact = () => {
 							type="button"
 							className="btn btn-primary form-control"
 							onClick={() => {
-								actions.addContact(name, email, address, phone);
+								actions.addContactFB(name, email, address, phone);
 							}}>
 							save
 						</button>

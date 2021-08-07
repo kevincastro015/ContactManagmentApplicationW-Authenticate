@@ -12,7 +12,7 @@ export const Home = () => {
 	const onSignInClicked = async (email, password) => {
 		try {
 			await signIn(email, password);
-			history.push("/dashboard");
+			history.push("/");
 			console.log("success");
 		} catch (e) {
 			alert(e.message);
@@ -57,7 +57,6 @@ export const Home = () => {
 								onClick={e => {
 									onSignInClicked(email, password);
 									e.preventDefault();
-									history.push("/dashboard");
 								}}>
 								Login
 							</button>
