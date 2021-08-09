@@ -32,7 +32,7 @@ export const ContactCard = props => {
 												<i className="fas fa-pencil-alt mr-3" />
 											</button>
 										</Link>
-										<button className="btn" onClick={() => actions.deleteContact(e.id)}>
+										<button className="btn" onClick={() => actions.deleteContactFB(e.id)}>
 											<i className="fas fa-trash-alt" />
 										</button>
 									</div>

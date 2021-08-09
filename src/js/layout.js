@@ -18,7 +18,7 @@ export const Layout = () => {
 						<Route>
 							<Home />
 						</Route>
-						<Route exact path="/" component={Contacts} />
+						<Route exact path="/contacts" component={Contacts} />
 						<Route exact path="/add" component={AddContact} />
 						<Route exact path="/edit/:index" component={EditContact} />
 						<Route render={() => <h1 className="notfound">Not found!</h1>} />

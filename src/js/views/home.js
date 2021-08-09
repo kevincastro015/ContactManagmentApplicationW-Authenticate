@@ -12,7 +12,7 @@ export const Home = () => {
 	const onSignInClicked = async (email, password) => {
 		try {
 			await signIn(email, password);
-			history.push("/");
+			history.push("/contacts");
 			console.log("success");
 		} catch (e) {
 			alert(e.message);

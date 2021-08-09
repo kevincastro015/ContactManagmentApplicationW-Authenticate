@@ -1,6 +1,6 @@
 import firebase from "firebase/app";
 // const url = "https://assets.breatheco.de/apis/fake/contact/";
-const getState = ({ getStore, setStore }) => {
+const getState = ({ getStore, setStore, getActions }) => {
 	const url = "https://assets.breatheco.de/apis/fake/contact/";
 	return {
 		store: {
@@ -38,7 +38,7 @@ const getState = ({ getStore, setStore }) => {
 			// 		.catch(e => console.error(e));
 			//(Arrow) Functions that update the Store
 			// Remember to use the scope: scope.state.store & scope.setState()
-			addContactFB: (name, phone, enmail, address) => {
+			addContactFB: (name, phone, enmail, address, id) => {
 				firebase
 					.firestore()
 					.collection("contacts")
@@ -50,7 +50,7 @@ const getState = ({ getStore, setStore }) => {
 						address: address
 					})
 					// .catch(e => console.log(e))
-					.then(() => getStore().getContactFromFB());
+					.then(() => getActions().getContactFromFB());
 			}
 			// },
 			// addContact: (name, email, address, phone) => {
@@ -97,44 +97,43 @@ const getState = ({ getStore, setStore }) => {
 		// 					});
 		// 			})
 		// 			.catch(e => console.error(e));
-        // 	});
-        editContactFB: (id, name, address, email, phone) => {
-				firebase
-					.firestore()
-					.collection("contacts")
-					.doc(id)
-					.set({
-                        full_name: name,
-                        address: address,
-                        email: email,
-                        phone: phone
-					})
-					// .catch(e => console.log(e))
-					.then(() => getStore().getContactFromFB());
-        },
-        
-        deleteFromFB: id => {
-            firebase
-                .firestore()
-					.collection("contacts")
-					.doc(id)
-					.delete()
-					.catch(e => console.log(e))
-					.then(() => getActions().getContactFromFB());
-		// deleteContact: id => {
-		// 	fetch(url + id, {
-		// 		method: "delete"
-		// 	}).then(() => {
-		// 		fetch(url + "agenda/kevincastro015")
-		// 			.then(response => response.json())
-		// 			.then(result => {
-		// 				console.log("result", result),
-		// 					setStore({
-		// 						contacts: result
-		// 					});
-		// 			})
-		// 			.catch(e => console.error(e));
-			
+		// 	});
+		editContactFB: (id, name, address, email, phone) => {
+			firebase
+				.firestore()
+				.collection("contacts")
+				.doc(id)
+				.set({
+					full_name: name,
+					address: address,
+					email: email,
+					phone: phone
+				})
+				// .catch(e => console.log(e))
+				.then(() => getStore().getContactFromFB());
+		},
+
+		deleteFromFB: id => {
+			firebase
+				.firestore()
+				.collection("contacts")
+				.doc(id)
+				.delete()
+				.catch(e => console.log(e))
+				.then(() => getActions().getContactFromFB());
+			// deleteContact: id => {
+			// 	fetch(url + id, {
+			// 		method: "delete"
+			// 	}).then(() => {
+			// 		fetch(url + "agenda/kevincastro015")
+			// 			.then(response => response.json())
+			// 			.then(result => {
+			// 				console.log("result", result),
+			// 					setStore({
+			// 						contacts: result
+			// 					});
+			// 			})
+			// 			.catch(e => console.error(e));
 		}
 	};
 };
