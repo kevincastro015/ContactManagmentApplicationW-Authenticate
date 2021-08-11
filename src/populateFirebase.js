@@ -5,13 +5,13 @@ const url = "https://assets.breatheco.de/apis/fake/contact/";
 
 var firebaseConfig = {
     apiKey: "AIzaSyA6u-vLgyigWzQu41x_jw96Lf-6dE8dElc",
-    authDomain: "mdc-14-authentication.firebaseapp.com",
-    projectId: "mdc-14-authentication",
-    storageBucket: "mdc-14-authentication.appspot.com",
+    authDomain: "authenticate-exercise.firebaseapp.com",
+    projectId: "authenticate-exercise",
+    storageBucket: "authenticate-exercise.appspot.com",
     messagingSenderId: "693079067731",
     appId: "1:693079067731:web:d82b988d38caf4ad828aa6",
     measurementId: "G-ECSKBX00DP"
-};
+  };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 

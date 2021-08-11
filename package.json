@@ -78,7 +78,8 @@
 	},
 	"dependencies": {
 		"bootstrap": "^4.3.1",
-		"firebase": "^8.9.0",
+		"firebase": "^8.9.1",
+		"node-fetch": "^2.6.1",
 		"prop-types": "^15.6.1",
 		"react": "^16.8.4",
 		"react-dom": "^16.8.4",
