@@ -10,6 +10,7 @@ export const ContactCard = props => {
 		//initialize state here
 	});
 	const { store, actions } = useContext(Context);
+	const contacts = [...new Set(store.contacts)];
 	console.log("storeeee", store.contacts);
 	return (
 		<div>
