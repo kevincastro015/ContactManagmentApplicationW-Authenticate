@@ -15,9 +15,7 @@ export const Layout = () => {
 			<BrowserRouter>
 				<div>
 					<Switch>
-						<Route>
-							<Home />
-						</Route>
+						<Route exact path="/" component={Home} />
 						<Route exact path="/contacts" component={Contacts} />
 						<Route exact path="/add" component={AddContact} />
 						<Route exact path="/edit/:index" component={EditContact} />

@@ -21,7 +21,7 @@ const getState = ({ getStore, setStore, getActions }) => {
 						contactsFB: aux
 					});
 
-					// console.log("data from Firebase", getStore().contactsFB);
+					console.log("data from Firebase", getStore().contactsFB);
 				} catch (e) {
 					console.log(e);
 				}
